@@ -1,8 +1,32 @@
-$bg-color: #333;
+$bg-color: #fff;
 $color: #42f489;
 $white: #fff;
 $break-small: 700px;
 
-body{
-	background: #fff;
+html, body{
+	background: $bg-color;
+	height: 100%;
+}
+.btnwrap{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.grid{
+	display: flex;
+	align-items: center;
+  justify-content: center;
+}
+.column{
+	display: inline-block;
+}
+.field{
+	border: 1px solid #000;
+	width: 100px;
+	height: 100px;
+	margin: 2px;
+
+	&:hover{
+		background: #bfc4cc;
+	}
 }

@@ -1,1 +1,24 @@
+html, body {
+  background: #fff;
+  height: 100%; }
 
+.btnwrap {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.column {
+  display: inline-block; }
+
+.field {
+  border: 1px solid #000;
+  width: 100px;
+  height: 100px;
+  margin: 2px; }
+  .field:hover {
+    background: #bfc4cc; }
