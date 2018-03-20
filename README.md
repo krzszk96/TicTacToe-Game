@@ -1,6 +1,6 @@
 # TicTacToe-Game
 
-# 
+#
 
 Project for learning purposes, game project
 
@@ -23,8 +23,6 @@ Live version:
 * JS
 
 * Gulp
-
-* RWD
 
 
 
