@@ -1,6 +1,15 @@
 html, body {
   background: #fff;
-  height: 100%; }
+  height: 100%;
+  margin: 0; }
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: auto; }
 
 .btnwrap {
   display: flex;
@@ -16,9 +25,15 @@ html, body {
   display: inline-block; }
 
 .field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #000;
   width: 100px;
   height: 100px;
   margin: 2px; }
   .field:hover {
     background: #bfc4cc; }
+
+.classX {
+  text-align: center; }
