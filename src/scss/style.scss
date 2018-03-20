@@ -1,11 +1,18 @@
 $bg-color: #fff;
-$color: #42f489;
-$white: #fff;
 $break-small: 700px;
 
 html, body{
 	background: $bg-color;
 	height: 100%;
+	margin: 0;
+}
+.game{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: auto;
 }
 .btnwrap{
 	display: flex;
@@ -21,6 +28,9 @@ html, body{
 	display: inline-block;
 }
 .field{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	border: 1px solid #000;
 	width: 100px;
 	height: 100px;
@@ -29,4 +39,8 @@ html, body{
 	&:hover{
 		background: #bfc4cc;
 	}
+}
+
+.classX{
+	text-align: center;
 }
