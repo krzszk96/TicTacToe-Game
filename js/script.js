@@ -11,6 +11,20 @@ function playerChoose(){
 }
 
 function whoWon(){
+  var arrayCompX = [];
+  var arrayCompO = [];
+  document.getElementById('grid').addEventListener("click", function(){
+    var compid = event.target.id;
+    if(event.target.textContent=="X"){
+      arrayCompX.push(compid);
+    }else if(event.target.textContent=="O"){
+      arrayCompO.push(compid);
+    }
+    console.log("tablicaX- " + arrayCompX);
+    console.log("tablicaO- " + arrayCompO);
+
+  });
+
 
 }
 
@@ -38,6 +52,7 @@ function placingXO(){
           event.target.appendChild(elem);
           player = 1;
 
+
         }
       }
     }
@@ -47,3 +62,4 @@ function placingXO(){
 
 playerChoose();
 placingXO();
+whoWon();
