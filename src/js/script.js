@@ -11,193 +11,68 @@ function playerChoose(){
 }
 
 function whoWon(){
-  var arrayCompX = [];
-  var arrayCompO = [];
+  var arrayComp = ["","","","","","","","",""];
   document.getElementById('grid').addEventListener("click", function(){
     var compid = event.target.id;
-    if(event.target.textContent=="X"){
-      arrayCompX.push(compid);
-    }else if(event.target.textContent=="O"){
-      arrayCompO.push(compid);
+
+    if(player==2){
+      arrayComp.splice((compid-1),1,"x");
+    }else if (player==1) {
+      arrayComp.splice((compid-1),1,"o");
     }
-    //check if x won
-    for (var i = 0; i < arrayCompX.length; i++) {
-      if(arrayCompX[i]==1){
-        for (var j = 0; j < arrayCompX.length; j++){
-          if(arrayCompX[j]==2){
-            for (var k = 0; k < arrayCompX.length; k++){
-              if(arrayCompX[k]==3){alert("X won")}
-            }
-          }
-        }
-      }
+    console.log(arrayComp);
+
+    if((arrayComp[0]=="x")&&(arrayComp[1]=="x")&&(arrayComp[2]=="x")){
+      alert("X won");
     }
-    for (var i = 0; i < arrayCompX.length; i++) {
-      if(arrayCompX[i]==4){
-        for (var j = 0; j < arrayCompX.length; j++){
-          if(arrayCompX[j]==5){
-            for (var k = 0; k < arrayCompX.length; k++){
-              if(arrayCompX[k]==6){alert("X won")}
-            }
-          }
-        }
-      }
+    if((arrayComp[3]=="x")&&(arrayComp[4]=="x")&&(arrayComp[5]=="x")){
+      alert("X won");
     }
-    for (var i = 0; i < arrayCompX.length; i++) {
-      if(arrayCompX[i]==7){
-        for (var j = 0; j < arrayCompX.length; j++){
-          if(arrayCompX[j]==8){
-            for (var k = 0; k < arrayCompX.length; k++){
-              if(arrayCompX[k]==9){alert("X won")}
-            }
-          }
-        }
-      }
+    if((arrayComp[6]=="x")&&(arrayComp[7]=="x")&&(arrayComp[8]=="x")){
+      alert("X won");
     }
-    for (var i = 0; i < arrayCompX.length; i++) {
-      if(arrayCompX[i]==1){
-        for (var j = 0; j < arrayCompX.length; j++){
-          if(arrayCompX[j]==4){
-            for (var k = 0; k < arrayCompX.length; k++){
-              if(arrayCompX[k]==7){alert("X won")}
-            }
-          }
-        }
-      }
+    if((arrayComp[0]=="x")&&(arrayComp[3]=="x")&&(arrayComp[6]=="x")){
+      alert("X won");
     }
-    for (var i = 0; i < arrayCompX.length; i++) {
-      if(arrayCompX[i]==2){
-        for (var j = 0; j < arrayCompX.length; j++){
-          if(arrayCompX[j]==5){
-            for (var k = 0; k < arrayCompX.length; k++){
-              if(arrayCompX[k]==8){alert("X won")}
-            }
-          }
-        }
-      }
+    if((arrayComp[1]=="x")&&(arrayComp[4]=="x")&&(arrayComp[7]=="x")){
+      alert("X won");
     }
-    for (var i = 0; i < arrayCompX.length; i++) {
-      if(arrayCompX[i]==3){
-        for (var j = 0; j < arrayCompX.length; j++){
-          if(arrayCompX[j]==6){
-            for (var k = 0; k < arrayCompX.length; k++){
-              if(arrayCompX[k]==9){alert("X won")}
-            }
-          }
-        }
-      }
+    if((arrayComp[2]=="x")&&(arrayComp[5]=="x")&&(arrayComp[8]=="x")){
+      alert("X won");
     }
-    for (var i = 0; i < arrayCompX.length; i++) {
-      if(arrayCompX[i]==1){
-        for (var j = 0; j < arrayCompX.length; j++){
-          if(arrayCompX[j]==5){
-            for (var k = 0; k < arrayCompX.length; k++){
-              if(arrayCompX[k]==9){alert("X won")}
-            }
-          }
-        }
-      }
+    if((arrayComp[0]=="x")&&(arrayComp[4]=="x")&&(arrayComp[8]=="x")){
+      alert("X won");
     }
-    for (var i = 0; i < arrayCompX.length; i++) {
-      if(arrayCompX[i]==3){
-        for (var j = 0; j < arrayCompX.length; j++){
-          if(arrayCompX[j]==5){
-            for (var k = 0; k < arrayCompX.length; k++){
-              if(arrayCompX[k]==7){alert("X won")}
-            }
-          }
-        }
-      }
+    if((arrayComp[2]=="x")&&(arrayComp[4]=="x")&&(arrayComp[6]=="x")){
+      alert("X won");
     }
-//check if O won
-for (var i = 0; i < arrayCompO.length; i++) {
-  if(arrayCompO[i]==1){
-    for (var j = 0; j < arrayCompO.length; j++){
-      if(arrayCompO[j]==2){
-        for (var k = 0; k < arrayCompO.length; k++){
-          if(arrayCompO[k]==3){alert("O won")}
-        }
-      }
+
+    if((arrayComp[0]=="o")&&(arrayComp[1]=="o")&&(arrayComp[2]=="o")){
+      alert("O won");
     }
-  }
-}
-for (var i = 0; i < arrayCompO.length; i++) {
-  if(arrayCompO[i]==4){
-    for (var j = 0; j < arrayCompO.length; j++){
-      if(arrayCompO[j]==5){
-        for (var k = 0; k < arrayCompO.length; k++){
-          if(arrayCompO[k]==6){alert("O won")}
-        }
-      }
+    if((arrayComp[3]=="o")&&(arrayComp[4]=="o")&&(arrayComp[5]=="o")){
+      alert("O won");
     }
-  }
-}
-for (var i = 0; i < arrayCompO.length; i++) {
-  if(arrayCompO[i]==7){
-    for (var j = 0; j < arrayCompO.length; j++){
-      if(arrayCompO[j]==8){
-        for (var k = 0; k < arrayCompO.length; k++){
-          if(arrayCompO[k]==9){alert("O won")}
-        }
-      }
+    if((arrayComp[6]=="o")&&(arrayComp[7]=="o")&&(arrayComp[8]=="o")){
+      alert("O won");
     }
-  }
-}
-for (var i = 0; i < arrayCompO.length; i++) {
-  if(arrayCompO[i]==1){
-    for (var j = 0; j < arrayCompO.length; j++){
-      if(arrayCompO[j]==4){
-        for (var k = 0; k < arrayCompO.length; k++){
-          if(arrayCompO[k]==7){alert("O won")}
-        }
-      }
+    if((arrayComp[0]=="o")&&(arrayComp[3]=="o")&&(arrayComp[6]=="o")){
+      alert("O won");
     }
-  }
-}
-for (var i = 0; i < arrayCompO.length; i++) {
-  if(arrayCompO[i]==2){
-    for (var j = 0; j < arrayCompO.length; j++){
-      if(arrayCompO[j]==5){
-        for (var k = 0; k < arrayCompO.length; k++){
-          if(arrayCompO[k]==8){alert("O won")}
-        }
-      }
+    if((arrayComp[1]=="o")&&(arrayComp[4]=="o")&&(arrayComp[7]=="o")){
+      alert("O won");
     }
-  }
-}
-for (var i = 0; i < arrayCompO.length; i++) {
-  if(arrayCompO[i]==3){
-    for (var j = 0; j < arrayCompO.length; j++){
-      if(arrayCompO[j]==6){
-        for (var k = 0; k < arrayCompO.length; k++){
-          if(arrayCompO[k]==9){alert("O won")}
-        }
-      }
+    if((arrayComp[2]=="o")&&(arrayComp[5]=="o")&&(arrayComp[8]=="o")){
+      alert("O won");
     }
-  }
-}
-for (var i = 0; i < arrayCompO.length; i++) {
-  if(arrayCompO[i]==1){
-    for (var j = 0; j < arrayCompO.length; j++){
-      if(arrayCompO[j]==5){
-        for (var k = 0; k < arrayCompO.length; k++){
-          if(arrayCompO[k]==9){alert("O won")}
-        }
-      }
+    if((arrayComp[0]=="o")&&(arrayComp[4]=="o")&&(arrayComp[8]=="o")){
+      alert("O won");
     }
-  }
-}
-for (var i = 0; i < arrayCompO.length; i++) {
-  if(arrayCompO[i]==3){
-    for (var j = 0; j < arrayCompO.length; j++){
-      if(arrayCompO[j]==5){
-        for (var k = 0; k < arrayCompO.length; k++){
-          if(arrayCompO[k]==7){alert("O won")}
-        }
-      }
+    if((arrayComp[2]=="o")&&(arrayComp[4]=="o")&&(arrayComp[6]=="o")){
+      alert("O won");
     }
-  }
-}
+
+
   });
 }
 
