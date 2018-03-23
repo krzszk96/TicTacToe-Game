@@ -14,15 +14,23 @@ function modalPopup(){
   var span = document.getElementById("close");
   var txt1 = document.getElementById("wintxt1");
   var txt2 = document.getElementById("wintxt2");
+  var draw = document.getElementById("drawtxt");
 
   modal.style.display = "block";
   if(player==2){
     txt1.style.display = "block";
     txt2.style.display = "none";
+    draw.style.display = "none";
   }
   else if (player ==1) {
     txt2.style.display = "block";
     txt1.style.display = "none";
+    draw.style.display = "none";
+  }else if (player ==0) {
+    txt2.style.display = "none";
+    txt1.style.display = "none";
+    draw.style.display = "block";
+
   }
 
   span.onclick = function(){
@@ -139,8 +147,9 @@ function whoWon(){
     var t8 = document.getElementById('8').hasChildNodes();
     var t9 = document.getElementById('9').hasChildNodes();
     if((t1==true)&&(t2==true)&&(t3==true)&&(t4==true)&&(t5==true)&&(t6==true)&&(t7==true)&&(t8==true)&&(t9==true)){
-      alert("draw");
       arrayComp = ["","","","","","","","",""];
+      player=0;
+      modalPopup();
       reset();
     }
 
@@ -160,6 +169,7 @@ function placingXO(){
           var text = document.createTextNode("X");
           elem.appendChild(text);
           event.target.appendChild(elem);
+          elem.classList.add("cellX");
           player = 2;
 
         }else if(player==2){
@@ -168,6 +178,7 @@ function placingXO(){
           var text = document.createTextNode("O");
           elem.appendChild(text);
           event.target.appendChild(elem);
+          elem.classList.add("cellO");
           player = 1;
 
         }
