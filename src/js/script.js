@@ -9,6 +9,31 @@ function playerChoose(){
     }
   });
 }
+function modalPopup(){
+  var modal = document.getElementById("myModal");
+  var span = document.getElementById("close");
+  var txt1 = document.getElementById("wintxt1");
+  var txt2 = document.getElementById("wintxt2");
+
+  modal.style.display = "block";
+  if(player==2){
+    txt1.style.display = "block";
+    txt2.style.display = "none";
+  }
+  else if (player ==1) {
+    txt2.style.display = "block";
+    txt1.style.display = "none";
+  }
+
+  span.onclick = function(){
+    modal.style.display = "none";
+  }
+  window.onclick = function(){
+    if(event.target == modal){
+      modal.style.display = "none";
+    }
+  }
+}
 
 function whoWon(){
   var arrayComp = ["","","","","","","","",""];
@@ -20,58 +45,104 @@ function whoWon(){
     }else if (player==1) {
       arrayComp.splice((compid-1),1,"o");
     }
-    console.log(arrayComp);
+
 
     if((arrayComp[0]=="x")&&(arrayComp[1]=="x")&&(arrayComp[2]=="x")){
-      alert("X won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[3]=="x")&&(arrayComp[4]=="x")&&(arrayComp[5]=="x")){
-      alert("X won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[6]=="x")&&(arrayComp[7]=="x")&&(arrayComp[8]=="x")){
-      alert("X won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[0]=="x")&&(arrayComp[3]=="x")&&(arrayComp[6]=="x")){
-      alert("X won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[1]=="x")&&(arrayComp[4]=="x")&&(arrayComp[7]=="x")){
-      alert("X won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[2]=="x")&&(arrayComp[5]=="x")&&(arrayComp[8]=="x")){
-      alert("X won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[0]=="x")&&(arrayComp[4]=="x")&&(arrayComp[8]=="x")){
-      alert("X won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[2]=="x")&&(arrayComp[4]=="x")&&(arrayComp[6]=="x")){
-      alert("X won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
 
     if((arrayComp[0]=="o")&&(arrayComp[1]=="o")&&(arrayComp[2]=="o")){
-      alert("O won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[3]=="o")&&(arrayComp[4]=="o")&&(arrayComp[5]=="o")){
-      alert("O won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[6]=="o")&&(arrayComp[7]=="o")&&(arrayComp[8]=="o")){
-      alert("O won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[0]=="o")&&(arrayComp[3]=="o")&&(arrayComp[6]=="o")){
-      alert("O won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[1]=="o")&&(arrayComp[4]=="o")&&(arrayComp[7]=="o")){
-      alert("O won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[2]=="o")&&(arrayComp[5]=="o")&&(arrayComp[8]=="o")){
-      alert("O won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[0]=="o")&&(arrayComp[4]=="o")&&(arrayComp[8]=="o")){
-      alert("O won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
     if((arrayComp[2]=="o")&&(arrayComp[4]=="o")&&(arrayComp[6]=="o")){
-      alert("O won");
+      arrayComp = ["","","","","","","","",""];
+      modalPopup();
+      reset();
     }
 
+    var t1 = document.getElementById('1').hasChildNodes();
+    var t2 = document.getElementById('2').hasChildNodes();
+    var t3 = document.getElementById('3').hasChildNodes();
+    var t4 = document.getElementById('4').hasChildNodes();
+    var t5 = document.getElementById('5').hasChildNodes();
+    var t6 = document.getElementById('6').hasChildNodes();
+    var t7 = document.getElementById('7').hasChildNodes();
+    var t8 = document.getElementById('8').hasChildNodes();
+    var t9 = document.getElementById('9').hasChildNodes();
+    if((t1==true)&&(t2==true)&&(t3==true)&&(t4==true)&&(t5==true)&&(t6==true)&&(t7==true)&&(t8==true)&&(t9==true)){
+      alert("draw");
+      arrayComp = ["","","","","","","","",""];
+      reset();
+    }
 
   });
 }
@@ -86,7 +157,6 @@ function placingXO(){
         if(player==1){
 
           var elem = document.createElement("P");
-          elem.classList.add("classX");
           var text = document.createTextNode("X");
           elem.appendChild(text);
           event.target.appendChild(elem);
@@ -100,14 +170,22 @@ function placingXO(){
           event.target.appendChild(elem);
           player = 1;
 
-
         }
       }
     }
 
   });
+  whoWon();
+}
+
+function reset(){
+  for(var i=0; i<9; i++){
+    if(document.getElementById(i+1).hasChildNodes()){
+      var toRemove = document.getElementById(i+1);
+      toRemove.removeChild(toRemove.childNodes[0]);
+    }
+  }
 }
 
 playerChoose();
 placingXO();
-whoWon();
