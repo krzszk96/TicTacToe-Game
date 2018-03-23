@@ -11,10 +11,42 @@ html, body {
   height: 100%;
   width: auto; }
 
+.instruct {
+  font-family: "Arial Black";
+  padding-bottom: 20px; }
+
 .btnwrap {
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  margin: 10px 0 15px 0; }
+
+.chooseX {
+  background-color: #fff;
+  border: solid 2px #4CAF50;
+  border-radius: 5px;
+  color: #000;
+  font-family: "Arial Black";
+  padding: 10px 32px;
+  margin-right: 5px;
+  text-align: center;
+  font-size: 18px; }
+  .chooseX:hover {
+    background-color: #4CAF50;
+    color: #fff; }
+
+.chooseO {
+  background-color: #fff;
+  border: solid 2px #4CAF50;
+  border-radius: 5px;
+  color: #000;
+  font-family: "Arial Black";
+  padding: 10px 32px;
+  text-align: center;
+  font-size: 18px; }
+  .chooseO:hover {
+    background-color: #4CAF50;
+    color: #fff; }
 
 .modal {
   display: none;
@@ -45,7 +77,11 @@ html, body {
   border: 1px solid #888;
   width: 80%; }
 
-#wintxt1, #wintxt2 {
+.wintxt {
+  text-align: center;
+  font-family: "Arial Black"; }
+
+#wintxt1, #wintxt2, #drawtxt {
   display: none; }
 
 .close {
@@ -77,5 +113,13 @@ html, body {
   .field:hover {
     background: #bfc4cc; }
 
-.classX {
-  text-align: center; }
+.cellX {
+  text-align: center;
+  font-family: "Arial Black";
+  font-size: 36px;
+  color: #e22b43; }
+
+.cellO {
+  text-align: center;
+  font-family: "Arial Black";
+  font-size: 36px; }
