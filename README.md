@@ -2,7 +2,7 @@
 
 #
 
-Project for learning purposes, game project
+Project for learning purposes, first game project
 
 
 
