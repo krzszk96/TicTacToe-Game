@@ -1,4 +1,23 @@
 var player=0;
+// var mode=0;
+
+// function modeChoose(){
+//   document.getElementById('modebtns').addEventListener("click", function(){
+//     if(event.target.id == "1v1"){
+//       mode = 1;
+//     }else if(event.target.id == "1vc") {
+//       mode = 2;
+//     }
+//     if(mode ==1){
+//       playerChoose();
+//       placingXO();
+//       reset();
+//     }
+//     else if (mode==2) {
+//       console.log("tak2");
+//     }
+//   });
+// }
 
 function playerChoose(){
   document.getElementById('btns').addEventListener("click", function(){
@@ -196,6 +215,7 @@ function reset(){
       toRemove.removeChild(toRemove.childNodes[0]);
     }
   }
+  player=0;
 }
 
 playerChoose();
