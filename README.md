@@ -6,7 +6,7 @@ Project for learning purposes, first game project
 
 
 
-Live version:
+Live version: https://krzszk96.github.io/TicTacToe-Game/
 
 
 
